@@ -28,7 +28,7 @@ class MoveingMouse:
         font_standard = font.Font(size=14, family="Roboto")
         headline = tk.Label(
             self.lable,
-            text="MoveMouse",
+            text="MoveingMouse",
             font=font_headline,
             background=self.backgroundColor,
             foreground="#6F6F6F",
@@ -105,12 +105,12 @@ class MoveingMouse:
         return inp
 
     def quit_programm(self):
-        quit = threading.Thread(target=self.quit_programm)
+        quit = threading.Thread(target=self.stop_moving)
         quit.start()
 
     def stop_moving(self):
         self.run = False
-        quit()
+        exit()
 
     def auto_click(self) -> None:
         self.move = threading.Thread(target=self.starting)
